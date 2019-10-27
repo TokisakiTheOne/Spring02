@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <!--利用  P  C  进行快捷注入-->
+    <bean id="hello" class="com.yyh.po.HelloWorld" p:list-ref="list1"
+    >
+        <property name="name">
+            <null/>
+        </property>
+    </bean>
+
+    <!--工具标签-->
+    <util:list id="list1">
+        <value>list1</value>
+        <value>list2</value>
+        <value>list3</value>
+    </util:list>
+
+</beans>

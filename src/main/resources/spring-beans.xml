@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 组件   承载   对象-->
+    <bean id="hello" class="com.yyh.po.HelloWorld">
+        <!--属性注入-->
+        <property name="name" value="你好Spring"></property>
+        <property name="list">
+            <list>
+                <value>list1</value>
+                <value>list2</value>
+                <value>list3</value>
+                <value>list4</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry>
+                    <key>
+                        <value>test1</value>
+                    </key>
+                    <value>测试1</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>test2</value>
+                    </key>
+                    <value>测试2</value>
+                </entry>
+            </map>
+        </property>
+        <property name="set">
+            <set>
+                <value>set1</value>
+                <value>set12</value>
+            </set>
+        </property>
+        <property name="strs">
+            <list>
+                <value>str1</value>
+                <value>str2</value>
+                <value>str3</value>
+            </list>
+        </property>
+        <property name="date">
+            <bean factory-bean="dateFormat" factory-method="parse">
+                <constructor-arg value="2018-12-12"/>
+            </bean>
+        </property>
+    </bean>
+    <bean id="dateFormat" class="java.text.SimpleDateFormat">
+        <constructor-arg value="yyyy-MM-dd"/>
+    </bean>
+
+
+    <bean id="hello1" class="com.yyh.po.HelloWorld">
+        <!--属性注入-->
+        <property name="name" value="你好Spring1"></property>
+    </bean>
+</beans>

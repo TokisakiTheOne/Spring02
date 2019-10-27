@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--  bean之间的继承关系-->
+    <bean id="address" abstract="true">
+        <property name="city" value="北京"/>
+        <property name="street" value="上庄"/>
+    </bean>
+
+    <bean id="a1" class="com.yyh.po.NewAddress" parent="address">
+        <property name="name" value="张三"/>
+        <property name="sex" value="男"/>
+    </bean>
+    <bean id="a2" class="com.yyh.po.NewAddress" parent="address">
+    </bean>
+</beans>

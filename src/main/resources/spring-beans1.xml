@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--构造方法注入-->
+    <bean id="hello" class="com.yyh.po.HelloWorld">
+        <!--  constructor  构造函数-->
+        <!--1. 通过参数的名称 进行注入-->
+        <constructor-arg name="name" value="张三"></constructor-arg>
+        <!--2. 通过参数的下标 进行注入  从左到右数  从0开始-->
+        <constructor-arg index="1">
+            <list>
+                <value>list1</value>
+                <value>list2</value>
+                <value>list3</value>
+            </list>
+        </constructor-arg>
+        <!--3. 通过参数的类型 进行注入-->
+        <constructor-arg type="java.util.Map">
+            <map>
+                <entry>
+                    <key>
+                        <value>map1</value>
+                    </key>
+                    <value>mapone</value>
+                </entry>
+            </map>
+        </constructor-arg>
+    </bean>
+</beans>

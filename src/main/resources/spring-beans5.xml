@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--作用域-->
+
+    <!--
+       默认bean的配置 是单例的  singleton
+       但是有点时候  bean不能作为单例模式出现
+       Spring中
+       singleton 单例  每次调用getBean方法都会返回同一个bean
+                       并且IOC容器初始化使就直接创建bean的实例
+        饿汉模式    程序一启动就加载，静态方法中初始化
+                   但是如果创建时间长，程序启动就会变慢
+        懒汉模式    使用时候才初始化
+
+       prototype 原型  每次调用getBean方法都会返回一个新的bean，
+                       并且在第一次调用getBean方法时才创建
+                存在一个对象，每次新建对象都是拷贝这个对象的属性
+                浅复制   和  深复制
+    -->
+
+    <!--
+    1. 默认情况下  IOC中Bean 是 单例模式的，如果对象是单例模式的
+    那么 他在ioc溶解创建的同时  创建bean的实例，并器对bean的属性初始化
+    2. 可以通过 bean 的 scope 属性修改bean 的作用域，如果取值为prototype
+    则 bean为原型：
+       每次都要向容器获取实例，得到都是一个新的对象
+       而且  不跟IOC容器一起创建了
+    3. IOC容器中bean的生命周期
+     3.1  谈论 bean的生命周期  前提是  这个bean是单例的
+     3.2  可以为 bean执行  init初始化  destory销毁
+     3.3  可以通过bean 的购置处理器来丰富bean的生命周期方法(面试.............)
+
+
+    -->
+
+
+
+
+
+
+
+
+</beans>
